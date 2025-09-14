@@ -1,0 +1,1 @@
+Starting C, even tho i have still not completed my rust and python Backend, i want to learn C to understand more of hardware and its interaction with software, and there is no better lang than C (maybe assembly too, but i aint that unstable yet), so will be learing C from the classic C book for unix systems.
