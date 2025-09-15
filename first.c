@@ -2,7 +2,7 @@
 // we use #include to bring them in scope
 
 int main(){ // this is where we write the main prog in main func
-	printf("Hello, word! \n"); // printf is a func from stdio which prints anything thats inside of it
+	printf("Hello, word! \n"); // printf is a func from stdio which prints anything thats inside of it, printf = print formated
 	printf("And hello to you too, you seem like traveller who has somehow returned to the same tree");
 	return 0; // this returns 0 to the OS when execution is done
 }
