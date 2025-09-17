@@ -38,14 +38,19 @@ int parallelLinearSearch(int arr[], int n, int target, int numThreads){
 		}else{
 			threadData[i].end = (i+1)*chunkSize; // if not, then end will (thread's number like first thread, second so on..) multiplied by chunksize
 		}
+		threadData[i].target = target;
+		threadData[i].result = -1;
 		if(pthread_create(&threads[i], NULL, searchchunk, &threadData[i]) !=0){
 			printf("Error creating thread %d \n", i);
 			return -1;
 		}
 	}
 	for(int i = 0; i < numThreads; i++){
-		pthread_join(threads[i], NULL);
-		
+		pthread_join(threads[i], NULL); // first wait for all threads to finish
+		}
+		// then we will check yje result
+	for (int i = 0; i < numThreads; ++i)
+	{
 		//if this thread found the target...
 		if(threadData[i].result != -1){
 			return threadData[i].result;
