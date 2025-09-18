@@ -1,8 +1,7 @@
 #include <stdio.h> // the .h tells its a header files
 // we can create out own header file and then include it and use its functions
-
+#include <string.h> // this is a library that hold multiple functions that we can perform on strings
 // we can also define functions, with or without return tyoe, which we have write just like main function
-
 float add(int x, int y){
 	return (float)(x+y);
 }
@@ -20,7 +19,6 @@ int pos(void){
 	int earth = 3; 
 	printf("earth is the %drd planet in the solar system \n", earth);
 	return earth;
-
 }
 
 int main(void){ // since in void we dont take any arguments, so we can put void there too
@@ -52,5 +50,16 @@ int main(void){ // since in void we dont take any arguments, so we can put void 
 	// in postfix, first a's value is assigned to b then a it incremented by 1,
 	// in prefix, first a is incremented with 1 then assigned to b
 
+	// we can have a string value type..
+	char *name = "ADARSH"; // the memory is stored in read-only memory, this is just a pointer, pointing to the location of the memory,
+	// this is not modifiy able.. but we can assign the same pointer to different memory,
+	name = "adarsh"; // this valid, but since its just pointer, we can access single elements like name[0] and assign this to something new
+	// but we can perform certain string operation like cancatenate on this, since its stored in read only memory
+
+	// we can also create string as..
+	char name2[] = "ADARSH"; // the memmroy is stored on a stack, and it can be modified
+	// we can accessing single elements and change their values, but we can reassign the whole thing to something else.
+
+	// we can also send have a fucntion to return string value and take a string as paramter
 	return 0;
 }

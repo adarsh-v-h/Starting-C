@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h> // to use true or false cases, we have to include this too, this also lets us define bool datatype value...
 #define ARRAY_LENGTH(arr) (sizeof(arr)/sizeof(arr[0]))
 // with define, we are kinda creating a Alisa for this whole operation...
@@ -9,8 +10,11 @@ int linear_search2(int arr[], int n, int target);
 int linear_search3(int arr[], int n, int target);
 int main(void){
 	
-	int arr[] = {10,45,34,23,12,45,19,100,399,6996,69,10000};
-	int n = ARRAY_LENGTH(arr);
+	int n = 1000000;
+	int *arr = malloc(n*sizeof(int));
+	for(int i = 0; i <n; i++){
+		arr[i] = i;
+	}
 	int target, result;
 	char Choice;
 	while (true){

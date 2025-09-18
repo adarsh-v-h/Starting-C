@@ -56,13 +56,14 @@ int parallelLinearSearch(int arr[], int n, int target, int numThreads){
 			return threadData[i].result;
 		}
 	}
+	free(threadData);
+	free(threads);
 	// if no thread could find the target
 	return -1;
 }
-
 // now the main function..
 int main(){
-	int n = 1000000; // a large data set, since this threading good only if we are having a long list of data to scan through 
+	long int n = 100000000; // a large data set, since this threading good only if we are having a long list of data to scan through 
 	int *arr = malloc(n*sizeof(int)); // allocates memory dynamically 
 	for(int i = 0; i < n; i ++){
 		arr[i] = i;
@@ -71,6 +72,7 @@ int main(){
 	printf("Enter the target to search (0 to %d): ", n-1);
 	scanf("%d", &target);
 	int result = parallelLinearSearch(arr, n, target, 4);
+	free(arr);
 	if (result == -1){
 		printf("traget %d not found..", target);
 	}else{
